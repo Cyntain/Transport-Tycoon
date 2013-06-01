@@ -1,4 +1,4 @@
-package mapGen;
+package mapgen;
 import java.awt.*;
 import java.applet.*;
 import java.awt.event.*;
