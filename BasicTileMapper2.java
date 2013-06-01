@@ -11,18 +11,18 @@ public class BasicTileMapper2 extends Applet
 {
   Image screenImage;  // Image used for double buffering and its respective
   Graphics screenGC;  // graphics context
-  static final int screenWidth = 400;
-  static final int screenHeight = 400;
+  static final int SW = 400;
+  static final int SH = 400;
   Image tileImage; // Use to store the image for the tiles
-  static final int numTiles = 6; // The number of tiles
+  static final int NUMTILES = 6; // The number of tiles
   int tileWidth;
   int tileImageHeight;
   int tileHeight;
   Tile[] tiles; // An array to hold all of the tiles
-  static final byte[][] bgmap = {
-       };
-  static final int bgmapTileWidth = 20;
-  static final int bgmapTileHeight = 16;
+  static final byte[][] BGMAP = {
+      {1,1,1}};
+static final int BGW = 20;
+  static final int BGH = 16;
   int numXtiles;
   int numYtiles;
   int mapX = 0;
@@ -48,18 +48,18 @@ public class BasicTileMapper2 extends Applet
     // Get tile dimensions
     tileImageHeight = tileImage.getHeight(this);
     tileWidth = tileImage.getWidth(this);
-    tileHeight = tileImageHeight/numTiles;
+    tileHeight = tileImageHeight/NUMTILES;
 
     // Create an offsreen image for double buffering
-    screenImage = createImage(screenWidth, screenHeight);
+    screenImage = createImage(SW, SH);
     screenGC = screenImage.getGraphics();
 
     // Break image into tiles.
     prepareTiles();
 
     // Draw the upper left portion of the map
-    numXtiles = screenWidth/tileWidth;
-    numYtiles = screenHeight/tileHeight;
+    numXtiles = SW/tileWidth;
+    numYtiles = SH/tileHeight;
     drawMap();
 
   }
@@ -69,10 +69,10 @@ public class BasicTileMapper2 extends Applet
   */
   public void prepareTiles()
   {
-    tiles = new Tile[numTiles];
+    tiles = new Tile[NUMTILES];
 
     // Assume the tile images are arranged vertically
-    for(int i = 0; i < numTiles; i++)
+    for(int i = 0; i < NUMTILES; i++)
       tiles[i] = new Tile(tileImage, tileWidth, tileHeight, i);
   }
 
@@ -85,7 +85,7 @@ public class BasicTileMapper2 extends Applet
     int curY = 0;
     for(int i = 0; i <= numYtiles; i++){
       for(int j = 0; j <= numXtiles; j++){
-        tiles[bgmap[i][j]].paint(screenGC, curX, curY);
+        tiles[BGMAP[i][j]].paint(screenGC, curX, curY);
         curX += tileWidth;
       }
       curY += tileHeight;
