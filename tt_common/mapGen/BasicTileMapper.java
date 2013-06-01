@@ -1,3 +1,4 @@
+package mapGen;
 import java.awt.*;
 import java.applet.*;
 
@@ -8,6 +9,7 @@ import java.applet.*;
 * @author Eric R. Northam (enorth1@gl.umbc.edu)
 * @version 1.0 28 March 1999
 */
+
 public class BasicTileMapper extends Applet
 {
   Image screenImage;  // Image used for double buffering and its respective
