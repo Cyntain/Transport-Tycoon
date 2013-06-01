@@ -12,10 +12,10 @@ public class BasicTileMapper extends Applet
 {
   Image screenImage;  // Image used for double buffering and its respective
   Graphics screenGC;  // graphics context
-  static final int screenWidth = 400;
-  static final int screenHeight = 400;
+  static final int SW = 400;
+  static final int SH = 400;
   Image tileImage; // Use to store the image for the tiles
-  static final int numTiles = 6; // The number of tiles
+  static final int NUMTILES = 6; // The number of tiles
   int tileWidth;
   int tileImageHeight;
   int tileHeight;
@@ -40,17 +40,17 @@ public class BasicTileMapper extends Applet
     // Get tile dimensions
     tileImageHeight = tileImage.getHeight(this);
     tileWidth = tileImage.getWidth(this);
-    tileHeight = tileImageHeight/numTiles;
+    tileHeight = tileImageHeight/NUMTILES;
 
     // Create an offsreen image for double buffering
-    screenImage = createImage(screenWidth, screenHeight);
+    screenImage = createImage(SW, SH);
     screenGC = screenImage.getGraphics();
 
     // Break image into tiles.
     prepareTiles();
 
     // Copy each of the tiles diagonally to the offscreen image
-    for(int i = 0; i < numTiles; i++)
+    for(int i = 0; i < NUMTILES; i++)
       tiles[i].paint(screenGC,  i * tileWidth, i * tileHeight);
   }
 
@@ -59,10 +59,10 @@ public class BasicTileMapper extends Applet
   */
   public void prepareTiles()
   {
-    tiles = new Tile[numTiles];
+    tiles = new Tile[NUMTILES];
 
     // Assume the tile images are arranged vertically
-    for(int i = 0; i < numTiles; i++)
+    for(int i = 0; i < NUMTILES; i++)
       tiles[i] = new Tile(tileImage, tileWidth, tileHeight, i);
   }
 
