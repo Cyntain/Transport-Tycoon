@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.params=tileImage\ width\ height\ tileNum
-comment0.target=Tile(java.awt.Image,\ int,\ int,\ int)
-comment0.text=\r\n\ The\ Tile\ constructor\r\n\ @param\ tileImage\ a\ reference\ to\ the\ image\ of\ tiles\r\n\ @param\ width\ the\ width\ of\ the\ tile\r\n\ @param\ height\ the\ height\ of\ the\ tile\r\n\ @param\ tileNum\ this\ tiles\ number\r\n
-comment1.params=g\ x\ y
-comment1.target=void\ paint(java.awt.Graphics,\ int,\ int)
-comment1.text=\r\n\ Paints\ the\ tile\ to\ a\ graphics\ context\ with\ location\ x,\ y.\r\n\ @param\ g\ graphics\ context\ to\ paint\ to\r\n\ @param\ x\ x\ location\ to\ paint\ to.\r\n\ @param\ y\ y\ location\ to\ paint\ to.\r\n
-numComments=2
